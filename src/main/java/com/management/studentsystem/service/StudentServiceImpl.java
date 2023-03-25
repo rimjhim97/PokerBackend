@@ -15,15 +15,23 @@ public class StudentServiceImpl implements StudentService{
 	private StudentRepository studentRepo;
 	
 	@Override
-	public Student saveStudent(Student student) {
+	public Student saveStudent(Student student) 
+	{
 		//Saving student in db
 		return studentRepo.save(student);
 	}
 
 	@Override
-	public List<Student> getAllStudents() {
+	public List<Student> getAllStudents() 
+	{
 		//Fetch all student details
 		return studentRepo.findAll();
+	}
+
+	@Override
+	public Student fetchStudentDetails(int id)
+	{
+		return studentRepo.fetchStudentDetails(id);
 	}
 	
 
